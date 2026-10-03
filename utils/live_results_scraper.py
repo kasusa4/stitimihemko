@@ -2,27 +2,35 @@
 import time
 import re
 from datetime import datetime
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 import gc
 import tempfile
 from typing import Dict, List, Optional, Any
 
-LEAGUES = {
-    'English League': 7794,
-    'Spanish League': 7795,
-    'Italian League': 7796,
-    'German League': 9184,
-    'French League': 9183,
-    'Dutch League': 13774,
-    'Portuguese League': 13773
-}
+# Selenium imports made optional (unavailable on Streamlit Cloud)
+try:
+    from selenium import webdriver
+    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    HAS_SELENIUM = True
+except ImportError:
+    HAS_SELENIUM = False
+    webdriver = None
+    Options = None
+    By = None
+    WebDriverWait = None
+
+#  = {
+  #  'English League': 7794,
+   # 'Spanish League': 7795,
+    #'Italian League': 7796,
+    #'German League': 9184,
+    #'French League': 9183,
+    #'Dutch League': 13774,
+    #'Portuguese League': 13773
+#}
+
+from utils.leagues_config import LEAGUES
 
 class LiveResultsScraper:
     def __init__(self):

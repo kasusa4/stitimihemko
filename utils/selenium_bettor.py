@@ -6,12 +6,18 @@ Uses Selenium + human-like timing to place Over 2.5 bets.
 
 import time
 import random
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
+# --- Selenium imports made optional ---
+try:
+    from selenium import webdriver
+    HAS_SELENIUM = True
+except ImportError:
+    HAS_SELENIUM = False
+    # Placeholder - functions will check this flag
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.chrome.service import Service
 
 try:
     from webdriver_manager.chrome import ChromeDriverManager

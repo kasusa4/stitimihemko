@@ -1,10 +1,16 @@
 # utils/betpawa_live_scraper_v2.py
 import time
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+# --- Selenium imports made optional ---
+try:
+    from selenium import webdriver
+    HAS_SELENIUM = True
+except ImportError:
+    HAS_SELENIUM = False
+    # Placeholder - functions will check this flag
+    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
 import re
 import json
 import requests

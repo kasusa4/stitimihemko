@@ -2,14 +2,23 @@
 import time
 import re
 from datetime import datetime
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 
+# Selenium imports made optional (unavailable on Streamlit Cloud)
+try:
+    from selenium import webdriver
+    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    HAS_SELENIUM = True
+except ImportError:
+    HAS_SELENIUM = False
+    webdriver = None
+    Options = None
+    By = None
+    WebDriverWait = None
+    EC = None
+    
 # -------------------- CACHE --------------------
 _cached_htft_data = None
 _cached_matchday = None

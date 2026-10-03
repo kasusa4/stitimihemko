@@ -31,13 +31,13 @@ from utils.advanced_algorithms import (
 from utils.prediction_boost import (
     LeakyDefenseDetector, FormTrendDetector, CorrectScorePredictor
 )
-from utils.htft_scraper import fetch_htft_odds, clear_htft_cache
+#from utils.htft_scraper import fetch_htft_odds, clear_htft_cache
 from utils.session_manager import SessionManager
 from utils.session_analyzer import display_session_comparison
 from utils.virtual_odds_api import VirtualOddsAPI
-from utils.htft_dashboard import show_htft_dashboard
+#from utils.htft_dashboard import show_htft_dashboard
 from utils.virtual_odds_integration import VirtualOddsIntegration
-from utils.live_results_scraper import LEAGUES
+#from utils.live_results_scraper import LEAGUES
 from utils.automation_engine import AutomationEngine
 
 from utils.kalman_predictor import KalmanTeamStrength
