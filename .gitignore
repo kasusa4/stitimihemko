@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+
+# Debug artifacts
+*.png
+*.html
+*.csv
+body_text_*.txt
+page_text_*.txt
+debug_*
+betpawa_*_HTFT.txt
+
+# Data files (local state)
+accuracy_data.json
+apex_sessions.json
+bets_log.json
+bettor_config.json
+listener_state_archive.json
+users.json
+user_data/
+ml_models/
+
+# Test scripts
+test_*.py
+dump_*.py
+inspect_*.py
+find_current*.py
+sync_current.py
+
+# Random folders
+BETPAWA-WEB-SCRAPER/
+BETPAWA-WEB-SCRAPER-main/
+12.0.0/
+
+# OS
+.DS_Store
+Thumbs.db

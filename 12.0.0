@@ -1,0 +1,5 @@
+Collecting websockets
+  Using cached websockets-16.0-cp313-cp313-win_amd64.whl.metadata (7.0 kB)
+Using cached websockets-16.0-cp313-cp313-win_amd64.whl (178 kB)
+Installing collected packages: websockets
+Successfully installed websockets-16.0
