@@ -37,8 +37,7 @@ from utils.session_analyzer import display_session_comparison
 from utils.virtual_odds_api import VirtualOddsAPI
 #from utils.htft_dashboard import show_htft_dashboard
 from utils.virtual_odds_integration import VirtualOddsIntegration
-#from utils.live_results_scraper import LEAGUES
-from utils.automation_engine import AutomationEngine
+from utils.leagues_config import LEAGUES
 
 from utils.kalman_predictor import KalmanTeamStrength
 from utils.xgb_predictor import XGBGoalPredictor
